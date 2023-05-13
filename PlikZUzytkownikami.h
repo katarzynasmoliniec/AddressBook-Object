@@ -2,9 +2,9 @@
 #define PLIKIZUZYTKOWNIKAMI_H
 
 #include <iostream>
-#include <windows.h>
 #include <fstream>
-#include <sstream>
+#include <cstdlib>
+#include <vector>
 
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
@@ -18,10 +18,11 @@ class PlikZUzytkownikami
 
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
     bool czyPlikJestPusty();
+    Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
     PlikZUzytkownikami();
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
-
+    vector <Uzytkownik> wczytajUzytkownikowZPliku();
 };
 #endif
