@@ -20,6 +20,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    int wylogowanieUzytkownika();
 
 };
 #endif

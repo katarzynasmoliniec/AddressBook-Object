@@ -19,3 +19,8 @@ void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
+
+int KsiazkaAdresowa :: wylogowanieUzytkownika()
+{
+    uzytkownikMenedzer.wylogowanieUzytkownika();
+}
