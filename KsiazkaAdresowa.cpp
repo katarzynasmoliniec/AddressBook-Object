@@ -15,8 +15,8 @@ int KsiazkaAdresowa :: logowanieUzytkownika()
     uzytkownikMenedzer.logowanieUzytkownika();
 }
 
-/*void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
+void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
 {
-
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
-*/
+
