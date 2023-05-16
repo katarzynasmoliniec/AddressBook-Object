@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-#include "UzytkownikMenedzer.h"
 
 using namespace std;
 
@@ -18,7 +17,7 @@ class Adresat
     string adres;
 public:
     void ustawId(int noweId);
-    void ustawIdUzytkownika(int idZalogowanegoUzytkownika);
+    void ustawIdUzytkownika(int noweIdUzytkownika);
     void ustawImie(string noweImie);
     void ustawNazwisko(string noweNazwisko);
     void ustawNumerTelefonu(string nowuNumerTelefonu);

@@ -43,7 +43,7 @@ int UzytkownikMenedzer :: pobierzIdNowegoUzytkownika()
 
 bool UzytkownikMenedzer :: czyIstniejeLogin(string login)
 {
-    for (int i = 0; i < uzytkownicy.size(); i++)
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin() == login)
         {
@@ -56,7 +56,7 @@ bool UzytkownikMenedzer :: czyIstniejeLogin(string login)
 
 void UzytkownikMenedzer :: wypiszWszystkichUzytkownikow()
 {
-    for (int i = 0; i < uzytkownicy.size(); i++)
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
     {
         cout << uzytkownicy[i].pobierzId() << endl;
         cout << uzytkownicy[i].pobierzLogin() << endl;
@@ -75,7 +75,7 @@ int UzytkownikMenedzer :: logowanieUzytkownika()
 
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze:: wczytajLinie();
-    for (int i = 0; i < uzytkownicy.size(); i++)
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin() == login)
         {
@@ -93,12 +93,12 @@ int UzytkownikMenedzer :: logowanieUzytkownika()
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return idZalogowanegoUzytkownika = 0;
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return idZalogowanegoUzytkownika = 0;
 }
 
 void UzytkownikMenedzer :: zmianaHaslaZalogowanegoUzytkownika()
@@ -107,7 +107,7 @@ void UzytkownikMenedzer :: zmianaHaslaZalogowanegoUzytkownika()
     cout << "Podaj nowe haslo: ";
     noweHaslo = MetodyPomocnicze :: wczytajLinie();
 
-    for (int i = 0; i < uzytkownicy.size(); i++)
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
@@ -121,7 +121,7 @@ void UzytkownikMenedzer :: zmianaHaslaZalogowanegoUzytkownika()
 
 int UzytkownikMenedzer :: wylogowanieUzytkownika()
 {
-    idZalogowanegoUzytkownika = 0;
+    return idZalogowanegoUzytkownika = 0;
     //adresaci.clear();
     cout << "Uzytkownik wylogowany!";
 }

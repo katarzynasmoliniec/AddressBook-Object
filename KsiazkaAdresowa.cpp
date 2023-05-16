@@ -10,7 +10,7 @@ void KsiazkaAdresowa :: wypiszWszystkichUzytkownikow()
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
 
-int KsiazkaAdresowa :: logowanieUzytkownika()
+void KsiazkaAdresowa :: logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
 }
@@ -20,7 +20,13 @@ void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-int KsiazkaAdresowa :: wylogowanieUzytkownika()
+void KsiazkaAdresowa :: wylogowanieUzytkownika()
 {
     uzytkownikMenedzer.wylogowanieUzytkownika();
 }
+
+void KsiazkaAdresowa :: dodajAdresata()
+{
+    adresatMenedzer.dodajAdresata();
+}
+
