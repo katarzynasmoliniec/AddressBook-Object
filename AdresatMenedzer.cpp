@@ -2,10 +2,10 @@
 
 AdresatMenedzer :: AdresatMenedzer()
 {
-    idOstatniegoAdresata = 0;
+    idOstatniegoAdresata = pobierzIdNowegoAdresata();
 }
 
-vector <Adresat> AdresatMenedzer :: dodajAdresata()
+void AdresatMenedzer :: dodajAdresata()
 {
     Adresat adresat;
 
@@ -16,15 +16,20 @@ vector <Adresat> AdresatMenedzer :: dodajAdresata()
     adresaci.push_back(adresat);
     PlikZAdresatami plikZAdresatami;
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
+}
 
-    return adresaci;
+int AdresatMenedzer :: pobierzIdNowegoAdresata()
+{
+    PlikZAdresatami plikZAdresatami;
+    idOstatniegoAdresata = plikZAdresatami.pobierzIdNowegoAdresata();
+    return idOstatniegoAdresata;
 }
 
 Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
  {
     Adresat adresat;
     adresat.ustawId(++idOstatniegoAdresata);
-    adresat.pobierzIdUzytkownika();
+    adresat.ustawIdUzytkownika(0);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze:: wczytajLinie());
@@ -46,14 +51,41 @@ Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
     return adresat;
 }
 
-int AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+void AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     if (adresaci.empty())
     {
         PlikZAdresatami plikZAdresatami;
-        idOstatniegoAdresata = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-        return idOstatniegoAdresata;
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    }
+}
+
+void AdresatMenedzer :: wyswietlWszystkichAdresatow()
+{
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (size_t i = 0; i < adresaci.size(); i++)
+        {
+            wyswietlDaneAdresata(adresaci[i]);
+        }
+        cout << endl;
     }
     else
-        return idOstatniegoAdresata = 0;
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+
+void AdresatMenedzer :: wyswietlDaneAdresata(Adresat adresat)
+{
+    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
+    cout << "Imie:               " << adresat.pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << adresat.pobierzEmail() << endl;
+    cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }

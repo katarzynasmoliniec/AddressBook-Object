@@ -21,15 +21,15 @@ class AdresatMenedzer
     Adresat podajDaneNowegoAdresata();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+    void wyswietlDaneAdresata(Adresat adresat);
+    int pobierzIdNowegoAdresata();
 
 public:
     AdresatMenedzer();
 
-    vector <Adresat> dodajAdresata();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-
-   // void wyswietlDaneAdresata(Adresat adresat);
-    //void dopiszAdresataDoPliku(Adresat adresat);
+    void dodajAdresata();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void wyswietlWszystkichAdresatow();
 
 };
 #endif

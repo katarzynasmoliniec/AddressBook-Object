@@ -30,6 +30,11 @@ void KsiazkaAdresowa :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 }
 
+void KsiazkaAdresowa :: wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer.wyswietlWszystkichAdresatow();
+}
+
 void KsiazkaAdresowa :: dodajAdresata()
 {
     adresatMenedzer.dodajAdresata();

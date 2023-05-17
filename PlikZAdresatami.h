@@ -22,10 +22,11 @@ class PlikZAdresatami
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
-
 public:
     PlikZAdresatami() : nazwaPlikuZAdresatami("Adresaci.txt"){};
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dopiszAdresataDoPliku(Adresat adresat);
+    int pobierzIdNowegoAdresata();
+
 };
 #endif
