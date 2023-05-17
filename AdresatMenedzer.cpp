@@ -2,10 +2,10 @@
 
 AdresatMenedzer :: AdresatMenedzer()
 {
-    idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    idOstatniegoAdresata = 0;
 }
 
-int AdresatMenedzer :: dodajAdresata()
+vector <Adresat> AdresatMenedzer :: dodajAdresata()
 {
     Adresat adresat;
 
@@ -17,15 +17,14 @@ int AdresatMenedzer :: dodajAdresata()
     PlikZAdresatami plikZAdresatami;
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    return ++idOstatniegoAdresata;
+    return adresaci;
 }
 
 Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
-{
+ {
     Adresat adresat;
-
     adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(0);
+    adresat.pobierzIdUzytkownika();
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze:: wczytajLinie());
@@ -46,7 +45,6 @@ Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
 
     return adresat;
 }
-
 
 int AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {

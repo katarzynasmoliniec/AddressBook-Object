@@ -7,14 +7,13 @@
 #include <vector>
 
 #include "Adresat.h"
-//#include "AdresatMenedzer.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
 
 class PlikZAdresatami
 {
-    string nazwaPlikuZAdresatami;
+    const string nazwaPlikuZAdresatami;
 
     bool czyPlikJestPusty();
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
@@ -25,7 +24,7 @@ class PlikZAdresatami
 
 
 public:
-    PlikZAdresatami();
+    PlikZAdresatami() : nazwaPlikuZAdresatami("Adresaci.txt"){};
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void dopiszAdresataDoPliku(Adresat adresat);
 };

@@ -9,7 +9,6 @@
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
-#include "UzytkownikMenedzer.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
@@ -25,12 +24,12 @@ class AdresatMenedzer
 
 public:
     AdresatMenedzer();
-    int dodajAdresata();
+
+    vector <Adresat> dodajAdresata();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
    // void wyswietlDaneAdresata(Adresat adresat);
-    void dopiszAdresataDoPliku(Adresat adresat);
-
+    //void dopiszAdresataDoPliku(Adresat adresat);
 
 };
 #endif

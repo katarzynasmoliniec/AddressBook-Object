@@ -25,6 +25,11 @@ void KsiazkaAdresowa :: wylogowanieUzytkownika()
     uzytkownikMenedzer.wylogowanieUzytkownika();
 }
 
+void KsiazkaAdresowa :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+}
+
 void KsiazkaAdresowa :: dodajAdresata()
 {
     adresatMenedzer.dodajAdresata();

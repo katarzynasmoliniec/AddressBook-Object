@@ -14,6 +14,8 @@ int main()
     ksiazkaAdresowa.logowanieUzytkownika();
     //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     //ksiazkaAdresowa.wylogowanieUzytkownika();
+    ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    ksiazkaAdresowa.dodajAdresata();
     ksiazkaAdresowa.dodajAdresata();
 
 

@@ -1,10 +1,5 @@
 #include "PlikZAdresatami.h"
 
-PlikZAdresatami :: PlikZAdresatami()
-{
-    nazwaPlikuZAdresatami = "Adresaci.txt";
-}
-
 int PlikZAdresatami :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     Adresat adresat;
