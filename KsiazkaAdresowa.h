@@ -19,10 +19,10 @@ public:
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void logowanieUzytkownika();
+    int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-    void wylogowanieUzytkownika();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int wylogowanieUzytkownika();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
     void dodajAdresata();
 

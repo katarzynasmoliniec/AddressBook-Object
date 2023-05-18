@@ -25,7 +25,7 @@ Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
  {
     Adresat adresat;
     adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(1);
+    adresat.ustawIdUzytkownika(idUzytkownika);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze:: wczytajLinie());
@@ -47,9 +47,11 @@ Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
     return adresat;
 }
 
-void AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+int AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    idUzytkownika = idZalogowanegoUzytkownika;
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    return idUzytkownika;
 }
 
 void AdresatMenedzer :: wyswietlWszystkichAdresatow()

@@ -17,6 +17,7 @@ class AdresatMenedzer
 {
     vector <Adresat> adresaci;
     int idOstatniegoAdresata;
+    int idUzytkownika;
 
     Adresat podajDaneNowegoAdresata();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
@@ -28,7 +29,7 @@ class AdresatMenedzer
 public:
     AdresatMenedzer();
     void dodajAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void wyswietlWszystkichAdresatow();
 
 };

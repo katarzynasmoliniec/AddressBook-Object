@@ -24,7 +24,7 @@ class PlikZAdresatami
 
 public:
     PlikZAdresatami() : nazwaPlikuZAdresatami("Adresaci.txt"){};
-    vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idUzytkownika);
     int pobierzIdNowegoAdresata();
     void dopiszAdresataDoPliku(Adresat adresat);
 };

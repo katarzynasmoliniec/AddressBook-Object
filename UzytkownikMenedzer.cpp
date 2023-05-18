@@ -73,7 +73,7 @@ int UzytkownikMenedzer :: logowanieUzytkownika()
 {
     string login = "", haslo = "";
 
-    cout << endl << "Podaj login: ";
+    cout << "Podaj login: ";
     login = MetodyPomocnicze:: wczytajLinie();
     for (size_t i = 0; i < uzytkownicy.size(); i++)
     {
@@ -121,7 +121,8 @@ void UzytkownikMenedzer :: zmianaHaslaZalogowanegoUzytkownika()
 
 int UzytkownikMenedzer :: wylogowanieUzytkownika()
 {
-    return idZalogowanegoUzytkownika = 0;
     //adresaci.clear();
+    idZalogowanegoUzytkownika = 0;
     cout << "Uzytkownik wylogowany!";
+    return idZalogowanegoUzytkownika;
 }
