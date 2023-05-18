@@ -23,6 +23,7 @@ class AdresatMenedzer
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     void wyswietlDaneAdresata(Adresat adresat);
     int pobierzIdNowegoAdresata();
+    PlikZAdresatami plikZAdresatami;
 
 public:
     AdresatMenedzer();
