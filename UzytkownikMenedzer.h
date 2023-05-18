@@ -11,13 +11,12 @@
 #include "PlikZUzytkownikami.h"
 #include "MetodyPomocnicze.h"
 
-
 using namespace std;
 
 class UzytkownikMenedzer
 {
-    int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
+    int idZalogowanegoUzytkownika;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
@@ -25,12 +24,15 @@ class UzytkownikMenedzer
     PlikZUzytkownikami plikZUzytkownikami;
 
 public:
+
+
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami){};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    int wylogowanieUzytkownika();
 
 };
 #endif
