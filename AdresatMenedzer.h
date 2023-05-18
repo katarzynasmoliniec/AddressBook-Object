@@ -26,7 +26,6 @@ class AdresatMenedzer
 
 public:
     AdresatMenedzer();
-
     void dodajAdresata();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wyswietlWszystkichAdresatow();
