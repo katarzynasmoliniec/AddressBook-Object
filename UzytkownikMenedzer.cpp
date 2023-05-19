@@ -121,8 +121,7 @@ void UzytkownikMenedzer :: zmianaHaslaZalogowanegoUzytkownika()
 
 int UzytkownikMenedzer :: wylogowanieUzytkownika()
 {
-    //adresaci.clear();
     idZalogowanegoUzytkownika = 0;
     cout << "Uzytkownik wylogowany!";
-    return idZalogowanegoUzytkownika;
+    return 0;
 }

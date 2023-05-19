@@ -2,7 +2,24 @@
 
 AdresatMenedzer :: AdresatMenedzer()
 {
-   idOstatniegoAdresata = pobierzIdNowegoAdresata();
+    idZalogowanegoUzytkownika = 0;
+}
+
+AdresatMenedzer :: ~AdresatMenedzer()
+{
+    usuwanieAdresatowZpamieci();
+
+}
+void AdresatMenedzer :: usuwanieAdresatowZpamieci()
+{
+    idZalogowanegoUzytkownika = 0;
+    adresaci.clear();
+}
+
+void AdresatMenedzer :: ustawIdZalogowanegoUzytkownika(int nowyIdUzytkownika)
+{
+    if(nowyIdUzytkownika >=0)
+        idZalogowanegoUzytkownika = nowyIdUzytkownika;
 }
 
 void AdresatMenedzer :: dodajAdresata()
@@ -15,17 +32,11 @@ void AdresatMenedzer :: dodajAdresata()
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 }
 
-int AdresatMenedzer :: pobierzIdNowegoAdresata()
-{
-    idOstatniegoAdresata = plikZAdresatami.pobierzIdNowegoAdresata();
-    return idOstatniegoAdresata;
-}
-
 Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
  {
     Adresat adresat;
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idUzytkownika);
+    adresat.ustawId(plikZAdresatami.pobierzIdNowegoAdresata()+ 1);
+    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze:: wczytajLinie());
@@ -47,11 +58,9 @@ Adresat AdresatMenedzer :: podajDaneNowegoAdresata()
     return adresat;
 }
 
-int AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+void AdresatMenedzer :: wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    idUzytkownika = idZalogowanegoUzytkownika;
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-    return idUzytkownika;
 }
 
 void AdresatMenedzer :: wyswietlWszystkichAdresatow()
