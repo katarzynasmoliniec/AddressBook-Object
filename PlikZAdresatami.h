@@ -24,7 +24,7 @@ class PlikZAdresatami
     bool czyPlikJestPusty();
 
 public:
-    PlikZAdresatami() : nazwaPlikuZAdresatami("Adresaci.txt"){};
+    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};
     vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idUzytkownika);
     int pobierzIdNowegoAdresata();
     void dopiszAdresataDoPliku(Adresat adresat);

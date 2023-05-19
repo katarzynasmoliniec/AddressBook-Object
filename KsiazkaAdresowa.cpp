@@ -24,9 +24,9 @@ void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
 
 void KsiazkaAdresowa :: wylogowanieUzytkownika()
 {
-    uzytkownikMenedzer.wylogowanieUzytkownika();
-    delete &uzytkownikMenedzer;
-
+    int idZalogowanegoUzytkownika = uzytkownikMenedzer.wylogowanieUzytkownika();
+    adresatMenedzer.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    adresatMenedzer.usuwanieAdresatowZpamieci();
 }
 
 void KsiazkaAdresowa :: wyswietlWszystkichAdresatow()

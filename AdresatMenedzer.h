@@ -23,16 +23,16 @@ class AdresatMenedzer
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     void wyswietlDaneAdresata(Adresat adresat);
     int pobierzIdNowegoAdresata();
-    void usuwanieAdresatowZpamieci();
     PlikZAdresatami plikZAdresatami;
 
 public:
-    AdresatMenedzer();
-    ~AdresatMenedzer();
+    AdresatMenedzer(string nazwaPlizuZAdresatami) : plikZAdresatami(nazwaPlizuZAdresatami){
+    idZalogowanegoUzytkownika = 0;
+    };
     void dodajAdresata();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void wyswietlWszystkichAdresatow();
     void ustawIdZalogowanegoUzytkownika(int nowyIdUzytkownika);
-
+    void usuwanieAdresatowZpamieci();
 };
 #endif

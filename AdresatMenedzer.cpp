@@ -1,15 +1,5 @@
 #include "AdresatMenedzer.h"
 
-AdresatMenedzer :: AdresatMenedzer()
-{
-    idZalogowanegoUzytkownika = 0;
-}
-
-AdresatMenedzer :: ~AdresatMenedzer()
-{
-    usuwanieAdresatowZpamieci();
-
-}
 void AdresatMenedzer :: usuwanieAdresatowZpamieci()
 {
     idZalogowanegoUzytkownika = 0;
