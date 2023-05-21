@@ -64,11 +64,6 @@ void UzytkownikMenedzer :: wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer :: wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer :: logowanieUzytkownika()
 {
     string login = "", haslo = "";
@@ -119,9 +114,46 @@ void UzytkownikMenedzer :: zmianaHaslaZalogowanegoUzytkownika()
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-int UzytkownikMenedzer :: wylogowanieUzytkownika()
+void UzytkownikMenedzer :: wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-    cout << "Uzytkownik wylogowany!";
-    return 0;
+    cout << "Uzytkownik wylogowany!" << endl;
+    system("pause");
 }
+
+char UzytkownikMenedzer :: wybierzOpcjeZMEnuUzytkownika()
+{
+    char wybor;
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
+    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze :: wczytajZnak();
+
+    return wybor;
+}
+
+bool UzytkownikMenedzer :: czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika > 0)
+            return true;
+    else
+        return false;
+}
+
+int UzytkownikMenedzer :: pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
