@@ -84,3 +84,28 @@ void KsiazkaAdresowa :: dodajAdresata()
     }
 }
 
+void KsiazkaAdresowa :: wyszukajAdresatowPoImieniu()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+         adresatMenedzer->wyszukajAdresatowPoImieniu();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac." << endl;
+        system("pause");
+    }
+}
+
+void KsiazkaAdresowa :: wyszukajAdresatowPoNazwisku()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+         adresatMenedzer->wyszukajAdresatowPoNazwisku();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac." << endl;
+        system("pause");
+    }
+}
