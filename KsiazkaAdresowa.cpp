@@ -109,3 +109,16 @@ void KsiazkaAdresowa :: wyszukajAdresatowPoNazwisku()
         system("pause");
     }
 }
+
+void KsiazkaAdresowa :: edytujAdresata()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+         adresatMenedzer->edytujAdresata();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac." << endl;
+        system("pause");
+    }
+}
