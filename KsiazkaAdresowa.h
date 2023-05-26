@@ -20,11 +20,13 @@ public:
     {
         adresatMenedzer = NULL;
     };
+
     ~KsiazkaAdresowa()
     {
         delete adresatMenedzer;
         adresatMenedzer = NULL;
     }
+
     int pobierzIdZalogowanegoUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMEnuUzytkownika();

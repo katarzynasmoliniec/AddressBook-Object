@@ -29,7 +29,8 @@ class PlikZAdresatami :public PlikTekstowy
 public:
     PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku){
         idOstatniegoAdresata =0;
-        };
+    };
+
     vector <Adresat>  wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idUzytkownika);
     int pobierzIdOstatniegoAdresata();
     bool dopiszAdresataDoPliku(Adresat adresat);

@@ -20,6 +20,7 @@ int MetodyPomocnicze :: konwersjaStringNaInt(string liczba)
 string MetodyPomocnicze :: wczytajLinie()
 {
     string wejscie = "";
+    cin.sync();
     getline(cin, wejscie);
     return wejscie;
 }
@@ -50,9 +51,9 @@ char MetodyPomocnicze :: wczytajZnak()
     string wejscie = "";
     char znak  = {0};
 
-    while (true)
+    while(true)
     {
-        getline(cin, wejscie);
+        string wejscie = wczytajLinie();
 
         if (wejscie.length() == 1)
         {
@@ -69,7 +70,7 @@ int MetodyPomocnicze :: wczytajLiczbeCalkowita()
     string wejscie = "";
     int liczba = 0;
 
-    while (true)
+    while(true)
     {
         getline(cin, wejscie);
 

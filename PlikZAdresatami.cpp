@@ -9,7 +9,7 @@ vector <Adresat> PlikZAdresatami :: wczytajAdresatowZalogowanegoUzytkownikaZPlik
     fstream plikTekstowy;
     plikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
 
-    if (plikTekstowy.good() == true)
+    if (plikTekstowy.good())
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
@@ -96,7 +96,7 @@ bool PlikZAdresatami :: dopiszAdresataDoPliku(Adresat adresat)
     fstream plikTekstowy;
     plikTekstowy.open(pobierzNazwePliku().c_str(), ios::app);
 
-    if (plikTekstowy.good()== true)
+    if (plikTekstowy.good())
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
@@ -216,25 +216,12 @@ void PlikZAdresatami :: usunAdresata(int idUsuwanegoAdresata)
 
     if (odczytywanyPlikTekstowy.good())
     {
-         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
-         {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
             if (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia) != idUsuwanegoAdresata)
             {
-                if (numerWczytanejLinii == 1)
-                    tymczasowyPlikTekstowy << wczytanaLinia;
-                else if (numerWczytanejLinii > 1)
-                {
-                    if (czyTymczasowyPlikJestPusty(tymczasowyPlikTekstowy))
-                    {
-                        tymczasowyPlikTekstowy << wczytanaLinia;
-                    }
-                    else
-                    {
-                        tymczasowyPlikTekstowy << endl << wczytanaLinia;
-                        daneJednegoAdresataOddzielonePionowymiKreskami = wczytanaLinia;
-                        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami);
-                    }
-                }
+                numerWczytanejLinii != 1 ? tymczasowyPlikTekstowy << endl << wczytanaLinia : tymczasowyPlikTekstowy << wczytanaLinia;
+                        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
             }
             numerWczytanejLinii++;
         }
