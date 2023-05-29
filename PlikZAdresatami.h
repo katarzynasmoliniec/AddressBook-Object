@@ -24,7 +24,6 @@ class PlikZAdresatami :public PlikTekstowy
     void edytujAdresataWPliku(int idEdytowanegoAdresata, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
-    bool czyTymczasowyPlikJestPusty(fstream &plikTekstowy);
 
 public:
     PlikZAdresatami(string nazwaPliku) : PlikTekstowy(nazwaPliku){
